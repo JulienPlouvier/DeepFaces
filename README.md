@@ -8,8 +8,8 @@ Deep Learning Algorithm to detect and recognize faces
 
 ## Milestones
 
-07/11/2017 => Project Started
+* **07/11/2017** - Project Started
 
 ## Authors
 
-* **Julien Plouvier** - *InitialWork* - [JulienPlouvier] (https://github.com/JulienPlouvier)
+* **Julien Plouvier** - *InitialWork* - [JulienPlouvier](https://github.com/JulienPlouvier)
