@@ -73,5 +73,33 @@ namespace Tests
             Assert.Equal(result22, hog.ArrayTo3x3Cell(cellToTest1, 2, 2));
             Assert.Equal(result32, hog.ArrayTo3x3Cell(cellToTest1, 3, 2));
         }
+
+        [Fact]
+        public void ArrayTo6x6CellTest()
+        {
+            hog = new HOG(null);
+
+            int[][] cellToTest1 = {new int[] {1, 2, 3, 4, 5, 1, 2, 3, 4, 5},
+                                  new int[] {6, 7, 8, 9, 10, 6, 7, 8, 9, 10},
+                                  new int[] {11, 12, 13, 14, 15, 11, 12, 13, 14, 15},
+                                  new int[] {16, 17, 18, 19, 20, 16, 17, 18, 19, 20},
+                                  new int[] {21, 22, 23, 24, 25, 21, 22, 23, 24, 25},
+                                  new int[] {1, 2, 3, 4, 5, 1, 2, 3, 4, 5},
+                                  new int[] {6, 7, 8, 9, 10, 6, 7, 8, 9, 10},
+                                  new int[] {11, 12, 13, 14, 15, 11, 12, 13, 14, 15},
+                                  new int[] {16, 17, 18, 19, 20, 16, 17, 18, 19, 20},
+                                  new int[] {21, 22, 23, 24, 25, 21, 22, 23, 24, 25},};
+
+            int[][] result00 = { new int[] { 1, 2, 3, 4, 5, 1 }, new int[] { 6,7,8,9,10,6 }, new int[] { 11,12,13,14,15,11 },
+                    new int[] { 16,17,18,19,20,16 }, new int[] { 21,22,23,24,25,21 }, new int[] { 1, 2, 3, 4, 5, 1 } };
+            int[][] result40 = { new int[] { 21,22,23,24,25,21 }, new int[] {1,2,3,4,5,1 }, new int[] { 6,7,8,9,10,6 },
+                        new int[] { 11,12,13,14,15,11 }, new int[] { 16,17,18,19,20,16 }, new int[] { 21,22,23,24,25,21 } };
+            int[][] result44 = { new int[] { 25,21,22,23,24,25 }, new int[] { 5,1,2,3,4,5 }, new int[] { 10,6,7,8,9,10 },
+                    new int[] { 15,11,12,13,14,15 }, new int[] { 20,16,17,18,19,20 }, new int[] { 25,21,22,23,24,25 } };
+
+            Assert.Equal(result00, hog.ArrayTo6x6Cell(cellToTest1, 0, 0));
+            Assert.Equal(result40, hog.ArrayTo6x6Cell(cellToTest1, 4, 0));
+            Assert.Equal(result44, hog.ArrayTo6x6Cell(cellToTest1, 4, 4));
+        }
     }
 }

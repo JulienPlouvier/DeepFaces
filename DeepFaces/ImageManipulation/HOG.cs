@@ -9,7 +9,7 @@ namespace ImageManipulation
 {
     public class HOG
     {
-        private static int[][] _GradientFilter = { new int[] { 0, -1, 0 }, new int[] { -1, 0, 1 }, new int[] { 0, 1, 0 } };
+        private static int[][] _gradientFilter = { new int[] { 0, -1, 0 }, new int[] { -1, 0, 1 }, new int[] { 0, 1, 0 } };
 
         private ImageData image;
 
@@ -31,7 +31,7 @@ namespace ImageManipulation
 
             for (int x = 0; x < 3; x++)
                 for (int y = 0; y < 3; y++)
-                    result += _GradientFilter[x][y] * cell[x][y];
+                    result += _gradientFilter[x][y] * cell[x][y];
 
             return result;
         }
@@ -65,6 +65,19 @@ namespace ImageManipulation
             for (int x = 0; x < 3; x++)
                 for (int y = 0; y < 3; y++)
                     result[x][y] = originArray[centerX - 1 + x][centerY - 1 + y];
+
+            return result;
+        }
+
+        public int[][] ArrayTo6x6Cell(int[][] originArray, int topLeftCornerX, int topLeftCornerY)
+        {
+            int[][] result = new int[6][];
+            for (int i = 0; i < 6; i++)
+                result[i] = new int[6];
+
+            for (int x = 0; x < 6; x++)
+                for (int y = 0; y < 6; y++)
+                    result[x][y] = originArray[topLeftCornerX + x][topLeftCornerY + y];
 
             return result;
         }
